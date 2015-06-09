@@ -1,0 +1,607 @@
+{
+	"folder_history":
+	[
+		"/D/kuaipan",
+		"/C/Users/yxsu/Documents/BaiduYun",
+		"/C/Users/yxsu/Documents/BaiduYun/note"
+	],
+	"last_version": 3083,
+	"last_window_id": 4,
+	"log_indexing": false,
+	"settings":
+	{
+		"new_window_height": 903.0,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"pro",
+						"Program"
+					],
+					[
+						"Sumatr",
+						"SumatraPDF"
+					],
+					[
+						"texlive",
+						"texlive"
+					]
+				]
+			},
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 392.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"pci",
+						"Package Control: Install Package"
+					]
+				],
+				"width": 432.0
+			},
+			"console":
+			{
+				"height": 126.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/c/texlive/2014/texmf-dist/tex/generic/pgf/graphdrawing/tex/pgflibrarygraphdrawing.code.tex",
+				"/D/kuaipan/paper/actor/akka_actor.md"
+			],
+			"find":
+			{
+				"height": 27.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"Lua"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 27.0
+			},
+			"input":
+			{
+				"height": 35.0
+			},
+			"menu_visible": true,
+			"output.exec":
+			{
+				"height": 124.0
+			},
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"replace":
+			{
+				"height": 50.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": false,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 270.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 1267.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"dokuwiki",
+						"dokuwiki"
+					],
+					[
+						"pro",
+						"Program"
+					],
+					[
+						"Sumatr",
+						"SumatraPDF"
+					],
+					[
+						"texlive",
+						"texlive"
+					]
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": "/D/kuaipan/paper/metric_learning/diagram_test.tex",
+					"settings":
+					{
+						"buffer_size": 266,
+						"line_ending": "Windows"
+					}
+				},
+				{
+					"file": "/D/kuaipan/note/scala/actor/actor_creation.md",
+					"settings":
+					{
+						"buffer_size": 1404,
+						"line_ending": "Windows"
+					}
+				},
+				{
+					"contents": "---\ntitle: actor creation\nnotebook: workspace\ntags: []\n---\n\n# Creation #\n\nActor is created by extending the `Actor` trait and implementing the `receive` method like this:\n\n```scala\nimport akka.actor.Actor\nimport akka.event.Logging\n\nclass MyActor extends Actor {\n	val log = Logging(context.system, this)\n\n	def receive = {\n		case 'one' => log.info(\"receive one message\")\n		case _ 	   => log.info(\"unknown message received\")\n	}\n}\n\n```\n\nTypically, the `receive` method should have a completed message handler to process all possible messages. Otherwise, actor system will throw an exception about this issue.\n\n# Props #\n\n`Props` is a configuration class which contains the option of creating actors.\n\nHere are three examples to declare `Props`:\n\n```scala\nimport akka.actor.Props\nval prop1 = Props[MyActor]\nval prop2 = Props(new ActorWithArgs(\"args\"))\nval prop3 = Props(classOf[ActorWithArgs], \"args\")\n```\n\n## Create Actor with Props ##\n\nCreate by `ActorSystem`\n\n```scala\nimport akka.actor.ActorSystem\n\nval system = ActorSystem(\"mySystem\")\nval myActor = system.actorOf(Props[MyActor], \"myActor2\")\n\n```\n\nCreate by `ActorContext`\n\n```scala\nclass ParentActor extends Actor {\n\n	val child = context.actorOf(Props[ChildActor], \"myActor3\")\n}\n\n```\n\n# Actor System #\n\n```scala\nimport akka.actor.ActorSystem\n\nval system = ActorSystem(\"mySystem\")\n\n```\n\n`ActorSystem` is a heavy class which is unique in each application.",
+					"file": "/D/kuaipan/wiki/pages/research/bandit/start.md",
+					"file_size": 1404,
+					"file_write_time": 130781239289072130,
+					"settings":
+					{
+						"buffer_size": 1404,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/C/Users/yxsu/AppData/Roaming/Sublime Text 3/Packages/User/Pandoc.sublime-settings",
+					"settings":
+					{
+						"buffer_size": 3852,
+						"line_ending": "Windows"
+					}
+				}
+			],
+			"build_system": "Packages/LaTeXing/LaTeX.sublime-build",
+			"build_system_choices":
+			[
+				[
+					[
+						[
+							"Packages/LaTeXing/LaTeX.sublime-build",
+							""
+						],
+						[
+							"Packages/LaTeXing/LaTeX.sublime-build",
+							"Primary Quick Build"
+						],
+						[
+							"Packages/LaTeXing/LaTeX.sublime-build",
+							"Choose Quick Build"
+						],
+						[
+							"Packages/LaTeXing/LaTeX.sublime-build",
+							"Clean up Files"
+						]
+					],
+					[
+						"Packages/LaTeXing/LaTeX.sublime-build",
+						"Primary Quick Build"
+					]
+				]
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 392.0,
+				"last_filter": "omn",
+				"selected_items":
+				[
+					[
+						"omn",
+						"OmniMarkupPreviewer: Preview Current Markup in Browser"
+					],
+					[
+						"pan",
+						"Pandoc"
+					],
+					[
+						"pandoc",
+						"Pandoc"
+					],
+					[
+						"pci",
+						"Package Control: Install Package"
+					],
+					[
+						"pcr",
+						"Package Control: Remove Package"
+					]
+				],
+				"width": 512.0
+			},
+			"console":
+			{
+				"height": 126.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"expanded_folders":
+			[
+				"/D/kuaipan",
+				"/D/kuaipan/note",
+				"/D/kuaipan/note/scala",
+				"/D/kuaipan/note/scala/actor",
+				"/D/kuaipan/paper",
+				"/D/kuaipan/paper/metric_learning",
+				"/D/kuaipan/wiki",
+				"/D/kuaipan/wiki/pages",
+				"/D/kuaipan/wiki/pages/research",
+				"/D/kuaipan/wiki/pages/research/bandit"
+			],
+			"file_history":
+			[
+				"/C/Users/yxsu/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+				"/Z/www/wiki/inc/html.php",
+				"/D/kuaipan/paper/metric_learning/_buffer.txt",
+				"/D/kuaipan/paper/metric_learning/buffer.txt",
+				"/C/Users/yxsu/AppData/Roaming/Sublime Text 3/Packages/Pandoc/Pandoc.sublime-settings",
+				"/C/Users/yxsu/AppData/Roaming/Sublime Text 3/Packages/User/Pandoc.sublime-settings",
+				"/C/Users/yxsu/AppData/Roaming/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
+				"/C/Users/yxsu/AppData/Roaming/Sublime Text 3/Packages/LaTeXing/LaTeXing.sublime-settings",
+				"/C/Users/yxsu/AppData/Roaming/Sublime Text 3/Packages/LaTeXing/Default (Windows).sublime-keymap",
+				"/C/Users/yxsu/AppData/Roaming/Sublime Text 3/Packages/LaTeXing/LaTeX (TikZ).sublime-build",
+				"/C/Users/yxsu/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/README.markdown",
+				"/C/Users/yxsu/AppData/Roaming/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
+				"/c/texlive/2014/texmf-dist/tex/generic/pgf/graphdrawing/tex/pgflibrarygraphdrawing.code.tex",
+				"/D/kuaipan/paper/actor/akka_actor.md"
+			],
+			"find":
+			{
+				"height": 35.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"lua",
+					"command",
+					"lualatex",
+					"Lua"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"folders":
+			[
+				{
+					"path": "D:\\kuaipan"
+				}
+			],
+			"groups":
+			[
+				{
+					"selected": 2,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/D/kuaipan/paper/metric_learning/diagram_test.tex",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 266,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										215,
+										215
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 3,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/D/kuaipan/note/scala/actor/actor_creation.md",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1404,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										1404
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": "/D/kuaipan/wiki/pages/research/bandit/start.md",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1404,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										302,
+										302
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						}
+					]
+				},
+				{
+					"selected": 0,
+					"sheets":
+					[
+						{
+							"buffer": 3,
+							"file": "/C/Users/yxsu/AppData/Roaming/Sublime Text 3/Packages/User/Pandoc.sublime-settings",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 3852,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										3566,
+										3566
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/JavaScript/JSON.tmLanguage",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 1197.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 2,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 27.0
+			},
+			"input":
+			{
+				"height": 35.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					],
+					[
+						1,
+						0,
+						2,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					0.5,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.exec":
+			{
+				"height": 124.0
+			},
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "Packages/LaTeXing/LaTeX.sublime-build",
+			"position": "0,2,3,-1,-1,-1,-1,780,25,0,1153",
+			"project": "",
+			"replace":
+			{
+				"height": 50.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": false,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": false,
+			"side_bar_width": 270.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 4,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}
